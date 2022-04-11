@@ -7,7 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../firebase.init";
 
 const useEmailPass = () => {
-  const [createUserWithEmailAndPassword, user, loading, error] =
+  const [createUserWithEmailAndPassword, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
 

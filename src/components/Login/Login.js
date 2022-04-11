@@ -6,7 +6,7 @@ import useEmailPass from "../../hooks/useEmailPass";
 import "./Login.css";
 
 const Login = () => {
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGoogle] = useSignInWithGoogle(auth);
   const { handelEmail, handelPassword, onLoginData } = useEmailPass();
   const navigate = useNavigate();
   const location = useLocation();
