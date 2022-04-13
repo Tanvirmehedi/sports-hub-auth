@@ -4,12 +4,12 @@ import useSports from "../../hooks/useSports";
 const AllSports = () => {
   const { sports } = useSports();
   return (
-    <div className="grid grid-cols-4 gap-3 container mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-3 container mx-auto">
       {sports.map((sport, index) => (
-        <div key={index}>
+        <div className="m-3" key={index}>
           <div>
             <img
-              className="mx-auto"
+              className="mx-auto w-full"
               src={sport?.strSportThumb ? sport?.strSportThumb : ""}
               alt=""
             />

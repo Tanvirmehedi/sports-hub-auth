@@ -22,9 +22,9 @@ const Login = () => {
       });
   };
   return (
-    <div className=" py-5 w-5/12 mx-auto border-2 flex flex-col  justify-center items-center my-40 rounded-md">
+    <div className=" py-5 w-2/3 md:w-5/12 mx-auto border-2 flex flex-col  justify-center items-center my-40 rounded-md">
       <h1 className="text-2xl uppercase">Login</h1>
-      <form className="text-left" onSubmit={onLoginData}>
+      <form className="text-left " onSubmit={onLoginData}>
         <div className="form-group">
           <label htmlFor="email" className="block">
             Email

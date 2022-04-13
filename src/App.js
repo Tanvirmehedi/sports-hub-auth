@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import About from "./components/About/About";
 import AllSports from "./components/AllSports/AllSports";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
@@ -27,6 +28,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

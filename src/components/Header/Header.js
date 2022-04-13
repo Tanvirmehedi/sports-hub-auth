@@ -1,11 +1,12 @@
+import { MenuIcon, XIcon } from "@heroicons/react/solid";
 import { signOut } from "firebase/auth";
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 import "./Header.css";
-
 const Header = () => {
+  const [open, setOpen] = useState(false);
   const [user, loading, error] = useAuthState(auth);
   const logout = () => {
     signOut(auth);
@@ -16,7 +17,11 @@ const Header = () => {
         <div>
           <Link to="/">Logo</Link>
         </div>
-        <div>
+        <div
+          className={`transition-all flex flex-col md:flex-row justify-center items-center ${
+            !open ? "hidden md:block" : ""
+          }`}
+        >
           <Link to="/">Home</Link>
           <Link to="/allsports">All Sports </Link>
           <Link to="/about">About</Link>
@@ -29,6 +34,18 @@ const Header = () => {
             </>
           ) : (
             <Link to="/login">Login</Link>
+          )}
+        </div>
+        <div
+          onClick={() => {
+            setOpen(!open);
+          }}
+          className="md:hidden pr-4 mt-1 cursor-pointer"
+        >
+          {!open ? (
+            <MenuIcon height={20}></MenuIcon>
+          ) : (
+            <XIcon height={20}></XIcon>
           )}
         </div>
       </nav>
