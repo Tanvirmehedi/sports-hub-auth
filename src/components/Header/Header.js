@@ -1,4 +1,4 @@
-import { MenuIcon, XIcon } from "@heroicons/react/solid";
+import { MenuIcon, ShoppingCartIcon, XIcon } from "@heroicons/react/solid";
 import { signOut } from "firebase/auth";
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -22,9 +22,12 @@ const Header = () => {
             !open ? "hidden md:block" : ""
           }`}
         >
-          <Link to="/">Home</Link>
-          <Link to="/allsports">All Sports </Link>
-          <Link to="/about">About</Link>
+          <Link to="/cart">
+            <ShoppingCartIcon
+              className="inline-block"
+              height={20}
+            ></ShoppingCartIcon>
+          </Link>
           {user ? (
             <>
               <span className="text-slate-500 uppercase">{user?.email}</span>
@@ -33,7 +36,10 @@ const Header = () => {
               </Link>
             </>
           ) : (
-            <Link to="/login">Login</Link>
+            <>
+              <Link to="/login">Login</Link>
+              <Link to="/signup">Sign Up</Link>
+            </>
           )}
         </div>
         <div

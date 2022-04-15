@@ -1,15 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import useSports from "../../hooks/useSports";
+import Country from "../Country/Country";
+import Search from "../Search/Search";
 
 const Home = () => {
   const { sports } = useSports();
-  const result = sports.filter((sport, index) => index <= 3);
+  const result = sports.filter((sport, index) => index <= 7);
+
   return (
     <>
+      <Search></Search>
+      <Country />
       <div className="grid grid-cols-1 md:grid-cols-4 container mx-auto gap-3 md:my-3 ">
         {result.map((sport, index) => (
-          <div key={index} className="border-2 m-3 p-2">
+          <div key={index} className="border-2 m-3 p-2 hover:drop-shadow-2xl">
             <div className="text-xl font-bold mb-3">Type: {sport.strSport}</div>
             <div>
               <img

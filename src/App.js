@@ -8,6 +8,7 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Notfound from "./components/Notfound/Notfound";
 import RequireAuth from "./components/RequireAuth/RequireAuth";
+import DisplaySearch from "./components/Search/DisplaySearch";
 import Signup from "./components/Signup/Signup";
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/displaysearch" element={<DisplaySearch />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
       <Footer></Footer>

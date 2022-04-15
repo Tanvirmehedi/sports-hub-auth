@@ -65,7 +65,7 @@ const Signup = () => {
             className="bg-slate-400 text-slate-900 w-full rounded-md py-1"
             type="submit"
           >
-            Login
+            Sign Up
           </button>
         </div>
       </form>
